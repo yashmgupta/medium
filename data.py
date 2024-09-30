@@ -976,3 +976,736 @@ Molecular evolution provides deep insights into the genetic basis of diversity, 
 
 **Applications:**
 - **Understanding Evolutionary
+
+# data.py
+
+research_summaries = [
+    # -------------------------
+    # Category: Biological Sciences
+    # -------------------------
+
+    # Subcategory: Molecular Biology
+    {
+        "id": 23,
+        "category": "Biological Sciences",
+        "title": "DNA, RNA, and Protein Structure and Function",
+        "content": """
+**DNA (Deoxyribonucleic Acid):**
+DNA is the hereditary material in humans and almost all other organisms. It carries genetic instructions used in growth, development, functioning, and reproduction.
+
+- **Structure:** Double helix composed of nucleotides (adenine, thymine, cytosine, guanine).
+- **Function:** Stores genetic information, replication, and transcription into RNA.
+
+**RNA (Ribonucleic Acid):**
+RNA is essential in various biological roles, including coding, decoding, regulation, and expression of genes.
+
+- **Structure:** Single-stranded molecule with ribose sugar and uracil instead of thymine.
+- **Function:** Transfers genetic information from DNA to ribosomes for protein synthesis (mRNA), forms part of ribosomes (rRNA), and assists in protein synthesis (tRNA).
+
+**Proteins:**
+Proteins are large, complex molecules that play many critical roles in the body.
+
+- **Structure:** Composed of amino acids linked by peptide bonds; primary, secondary, tertiary, and quaternary structures.
+- **Function:** Catalyze biochemical reactions (enzymes), provide structural support, transport molecules, and regulate cellular processes.
+""",
+        "tags": ["molecular biology", "DNA", "RNA", "protein structure", "genetics"],
+    },
+    {
+        "id": 24,
+        "category": "Biological Sciences",
+        "title": "Central Dogma of Molecular Biology",
+        "content": """
+**Central Dogma of Molecular Biology:**
+The central dogma describes the flow of genetic information within a biological system.
+
+**Flow of Information:**
+1. **DNA Replication:** DNA makes a copy of itself.
+2. **Transcription:** DNA is transcribed into messenger RNA (mRNA).
+3. **Translation:** mRNA is translated into proteins by ribosomes.
+
+**Key Points:**
+- **Unidirectional Flow:** Information flows from DNA to RNA to Protein.
+- **Exceptions:** Reverse transcription in retroviruses (RNA to DNA), RNA replication in some viruses.
+- **Significance:** Fundamental framework for understanding gene expression and regulation.
+""",
+        "tags": ["central dogma", "transcription", "translation", "gene expression"],
+    },
+    {
+        "id": 25,
+        "category": "Biological Sciences",
+        "title": "Transcription and Translation",
+        "content": """
+**Transcription:**
+Transcription is the process by which the genetic code from DNA is copied into messenger RNA (mRNA).
+
+**Steps:**
+1. **Initiation:** RNA polymerase binds to the promoter region of a gene.
+2. **Elongation:** RNA polymerase moves along the DNA, synthesizing complementary RNA strands.
+3. **Termination:** Transcription stops when RNA polymerase reaches a termination signal.
+
+**Translation:**
+Translation is the process by which the sequence of bases in mRNA is decoded into a sequence of amino acids to form proteins.
+
+**Steps:**
+1. **Initiation:** Ribosome assembles around the start codon on the mRNA.
+2. **Elongation:** Transfer RNA (tRNA) brings amino acids to the ribosome, matching their anticodon with the mRNA codon.
+3. **Termination:** Translation ends when a stop codon is reached, releasing the newly formed protein.
+""",
+        "tags": ["transcription", "translation", "gene expression", "protein synthesis"],
+    },
+
+    # Subcategory: Genetics
+    {
+        "id": 26,
+        "category": "Biological Sciences",
+        "title": "Mendelian Genetics",
+        "content": """
+**Mendelian Genetics:**
+Mendelian genetics refers to the study of how genes are inherited from parents to offspring, based on the principles established by Gregor Mendel.
+
+**Key Principles:**
+1. **Law of Segregation:** Each individual has two alleles for each gene, which segregate (separate) during gamete formation, ensuring that each gamete carries only one allele.
+2. **Law of Independent Assortment:** Genes for different traits assort independently of one another during gamete formation.
+3. **Dominance and Recessiveness:** In a heterozygote, one allele may mask the presence of another (dominant vs. recessive).
+
+**Applications:**
+- **Predicting Inheritance Patterns:** Understanding how traits are passed down in families.
+- **Genetic Counseling:** Assessing the risk of inherited conditions.
+- **Breeding Programs:** Enhancing desirable traits in plants and animals.
+""",
+        "tags": ["Mendelian genetics", "inheritance", "alleles", "dominance", "recessiveness"],
+    },
+    {
+        "id": 27,
+        "category": "Biological Sciences",
+        "title": "Population Genetics",
+        "content": """
+**Population Genetics:**
+Population genetics studies the genetic composition of populations and how it changes over time due to factors like mutation, selection, genetic drift, and gene flow.
+
+**Key Concepts:**
+- **Gene Pool:** The set of all genes and their alleles in a population.
+- **Allele Frequency:** The proportion of a particular allele among all allele copies in the gene pool.
+- **Hardy-Weinberg Equilibrium:** A principle that describes the genetic makeup of a population not subject to evolutionary forces.
+
+**Factors Influencing Population Genetics:**
+1. **Mutation:** Introduction of new alleles.
+2. **Natural Selection:** Differential survival and reproduction of individuals with certain alleles.
+3. **Genetic Drift:** Random changes in allele frequencies, more pronounced in small populations.
+4. **Gene Flow:** Movement of alleles between populations through migration.
+
+**Applications:**
+- **Understanding Evolutionary Processes:** How populations adapt over time.
+- **Conservation Genetics:** Preserving genetic diversity in endangered species.
+- **Human Genetics:** Studying genetic variations within and between human populations.
+""",
+        "tags": ["population genetics", "allele frequency", "genetic drift", "natural selection", "gene flow"],
+    },
+    {
+        "id": 28,
+        "category": "Biological Sciences",
+        "title": "Quantitative Genetics",
+        "content": """
+**Quantitative Genetics:**
+Quantitative genetics deals with phenotypes that vary continuously (e.g., height, weight) and are typically influenced by multiple genes and environmental factors.
+
+**Key Concepts:**
+- **Polygenic Traits:** Traits controlled by multiple genes, each contributing a small effect.
+- **Heritability:** The proportion of phenotypic variance that can be attributed to genetic variance.
+- **Genetic Correlation:** The degree to which genetic influences on one trait also affect another trait.
+
+**Statistical Models:**
+- **Additive Genetic Models:** Assume each allele contributes additively to the phenotype.
+- **Epistasis:** Interaction between different genes affecting the phenotype.
+- **GxE Interaction:** Interaction between genes and environmental factors.
+
+**Applications:**
+- **Animal and Plant Breeding:** Selecting for desirable traits with complex genetic architectures.
+- **Human Medicine:** Understanding the genetic basis of complex diseases.
+- **Evolutionary Biology:** Studying how complex traits evolve under selection.
+""",
+        "tags": ["quantitative genetics", "polygenic traits", "heritability", "genetic correlation"],
+    },
+
+    # Subcategory: Genomics
+    {
+        "id": 29,
+        "category": "Biological Sciences",
+        "title": "Genome Organization and Evolution",
+        "content": """
+**Genome Organization:**
+Genome organization refers to the arrangement of genetic material within a cell, including the structure of chromosomes, gene distribution, and non-coding regions.
+
+**Components:**
+- **Chromosomes:** Structures within cells that contain DNA and protein; humans have 23 pairs.
+- **Genes:** Segments of DNA that encode proteins or functional RNA molecules.
+- **Non-Coding DNA:** Regions of DNA that do not code for proteins but may have regulatory functions.
+- **Repetitive Elements:** DNA sequences that are repeated multiple times in the genome.
+
+**Genome Evolution:**
+Genome evolution involves changes in genome structure and content over time through processes like mutation, recombination, gene duplication, and horizontal gene transfer.
+
+**Key Processes:**
+- **Gene Duplication:** Creation of an additional gene copy, which can evolve new functions.
+- **Horizontal Gene Transfer:** Transfer of genetic material between unrelated organisms.
+- **Chromosomal Rearrangements:** Changes in chromosome structure, such as inversions, translocations, and fusions.
+
+**Applications:**
+- **Comparative Genomics:** Comparing genomes across species to identify evolutionary relationships.
+- **Functional Genomics:** Understanding gene function and interaction within the genome.
+- **Evolutionary Biology:** Studying how genomes evolve and adapt over time.
+""",
+        "tags": ["genome organization", "genome evolution", "chromosomes", "genes", "non-coding DNA"],
+    },
+    {
+        "id": 30,
+        "category": "Biological Sciences",
+        "title": "Comparative Genomics",
+        "content": """
+**Comparative Genomics:**
+Comparative genomics involves comparing the genomes of different species to understand similarities and differences in gene content, organization, and function.
+
+**Objectives:**
+- **Identify Conserved Genes:** Discover genes that are preserved across species, indicating essential functions.
+- **Understand Evolutionary Relationships:** Infer phylogenetic relationships based on genomic similarities.
+- **Detect Functional Elements:** Identify regulatory regions, non-coding RNAs, and other functional genomic elements.
+- **Study Gene Families:** Explore the expansion and diversification of gene families through duplication events.
+
+**Techniques:**
+- **Sequence Alignment:** Aligning genomic sequences to identify homologous regions.
+- **Synteny Analysis:** Comparing the order of genes on chromosomes across species.
+- **Phylogenetic Profiling:** Assessing the presence or absence of genes across different organisms to infer functional associations.
+
+**Applications:**
+- **Evolutionary Biology:** Understanding how genomes have evolved over time.
+- **Functional Annotation:** Assigning functions to unknown genes based on conservation.
+- **Medical Genetics:** Identifying disease-related genes through comparative studies.
+- **Agriculture:** Enhancing crop traits by comparing genomes of related species.
+""",
+        "tags": ["comparative genomics", "sequence alignment", "synteny analysis", "phylogenetics"],
+    },
+    {
+        "id": 31,
+        "category": "Biological Sciences",
+        "title": "Functional Genomics",
+        "content": """
+**Functional Genomics:**
+Functional genomics aims to understand the roles and interactions of genes and proteins within the genome, focusing on gene expression, regulation, and the dynamic aspects of the genome.
+
+**Key Areas:**
+- **Gene Expression Profiling:** Measuring the activity of genes under various conditions using techniques like microarrays and RNA-seq.
+- **Gene Regulation:** Studying mechanisms that control gene expression, including transcription factors and epigenetic modifications.
+- **Protein-Protein Interactions:** Identifying interactions between proteins to understand cellular processes.
+- **Systems Biology:** Integrating genomic data to model and predict biological systems.
+
+**Techniques:**
+- **RNA Sequencing (RNA-seq):** Quantifying gene expression levels across the genome.
+- **Chromatin Immunoprecipitation (ChIP-seq):** Mapping protein-DNA interactions to study gene regulation.
+- **Mass Spectrometry:** Analyzing protein expression and modifications.
+- **CRISPR-Cas9:** Editing genes to study their functions.
+
+**Applications:**
+- **Disease Research:** Identifying genes and pathways involved in diseases.
+- **Drug Discovery:** Targeting specific genes or proteins for therapeutic interventions.
+- **Agricultural Biotechnology:** Enhancing desirable traits in crops and livestock through genetic manipulation.
+- **Environmental Biology:** Understanding how organisms respond to environmental changes at the genomic level.
+""",
+        "tags": ["functional genomics", "gene expression", "gene regulation", "protein interactions"],
+    },
+
+    # Subcategory: Proteomics
+    {
+        "id": 32,
+        "category": "Biological Sciences",
+        "title": "Protein Structure and Function",
+        "content": """
+**Protein Structure:**
+Proteins have four levels of structure, each critical to their function.
+
+1. **Primary Structure:** The linear sequence of amino acids in a polypeptide chain.
+2. **Secondary Structure:** Local folding patterns stabilized by hydrogen bonds, such as alpha-helices and beta-sheets.
+3. **Tertiary Structure:** The overall three-dimensional shape of a single protein molecule, stabilized by various interactions including hydrogen bonds, ionic bonds, disulfide bridges, and hydrophobic packing.
+4. **Quaternary Structure:** The arrangement of multiple protein subunits in a multi-subunit complex.
+
+**Protein Function:**
+The function of a protein is intrinsically linked to its structure.
+
+- **Enzymes:** Catalyze biochemical reactions by lowering activation energy.
+- **Structural Proteins:** Provide support and shape to cells and tissues (e.g., collagen, keratin).
+- **Transport Proteins:** Move molecules across membranes or within the body (e.g., hemoglobin, transporters).
+- **Regulatory Proteins:** Control gene expression and signal transduction pathways (e.g., transcription factors, hormones).
+- **Defense Proteins:** Protect against pathogens (e.g., antibodies, complement proteins).
+
+**Structure-Function Relationship:**
+- **Active Sites:** Specific regions in enzymes where substrates bind and reactions occur.
+- **Binding Domains:** Regions that interact with other molecules, crucial for protein-protein and protein-ligand interactions.
+- **Conformational Changes:** Structural alterations that enable proteins to perform their functions (e.g., muscle contraction, enzyme activation).
+
+**Applications:**
+- **Drug Design:** Targeting specific protein structures to modulate their functions.
+- **Biotechnology:** Engineering proteins with desired properties for industrial or therapeutic use.
+- **Diagnostics:** Using protein biomarkers to detect diseases.
+- **Research:** Understanding cellular processes and mechanisms through protein studies.
+""",
+        "tags": ["proteomics", "protein structure", "protein function", "enzymes"],
+    },
+    {
+        "id": 33,
+        "category": "Biological Sciences",
+        "title": "Post-Translational Modifications",
+        "content": """
+**Post-Translational Modifications (PTMs):**
+PTMs are chemical modifications that occur to proteins after their synthesis (translation). These modifications can alter protein function, localization, stability, and interactions.
+
+**Common Types of PTMs:**
+1. **Phosphorylation:** Addition of a phosphate group, often regulating enzyme activity and signaling pathways.
+2. **Glycosylation:** Attachment of carbohydrate groups, important for protein folding, stability, and cell-cell interactions.
+3. **Ubiquitination:** Addition of ubiquitin molecules, targeting proteins for degradation via the proteasome.
+4. **Acetylation:** Addition of acetyl groups, commonly regulating gene expression by modifying histones.
+5. **Methylation:** Addition of methyl groups, affecting protein-protein interactions and gene regulation.
+6. **Hydroxylation:** Addition of hydroxyl groups, crucial for collagen stability and function.
+
+**Functional Implications:**
+- **Regulation of Activity:** PTMs can activate or inhibit enzyme functions.
+- **Protein Localization:** Direct proteins to specific cellular compartments.
+- **Protein-Protein Interactions:** Facilitate or prevent interactions between proteins.
+- **Signal Transduction:** Transmit signals within and between cells.
+
+**Techniques for Studying PTMs:**
+- **Mass Spectrometry:** Identifying and quantifying PTMs on proteins.
+- **Western Blotting:** Detecting specific PTMs using antibodies.
+- **Immunoprecipitation:** Isolating modified proteins for further analysis.
+- **Enzyme Assays:** Measuring the activity of enzymes involved in PTMs.
+
+**Applications:**
+- **Disease Research:** Dysregulation of PTMs is implicated in various diseases, including cancer and neurodegenerative disorders.
+- **Drug Development:** Targeting PTM pathways for therapeutic interventions.
+- **Biotechnology:** Engineering proteins with specific PTMs for industrial applications.
+- **Cell Biology:** Understanding cellular processes and signaling mechanisms through PTM studies.
+""",
+        "tags": ["post-translational modifications", "phosphorylation", "glycosylation", "ubiquitination"],
+    },
+    {
+        "id": 34,
+        "category": "Biological Sciences",
+        "title": "Protein-Protein Interactions",
+        "content": """
+**Protein-Protein Interactions (PPIs):**
+PPIs are physical contacts established between two or more protein molecules as a result of biochemical events and/or electrostatic forces.
+
+**Importance of PPIs:**
+- **Cellular Function:** PPIs are essential for virtually all biological processes, including signal transduction, immune responses, and metabolic pathways.
+- **Structural Integrity:** Form complexes that provide structural support within cells and tissues.
+- **Regulation:** Modulate enzyme activities and gene expression.
+
+**Types of PPIs:**
+1. **Permanent Interactions:** Stable complexes that exist throughout the cell's lifetime (e.g., hemoglobin tetramers).
+2. **Transient Interactions:** Temporary associations that occur during specific cellular events (e.g., kinase-substrate interactions).
+
+**Methods to Study PPIs:**
+- **Yeast Two-Hybrid Screening:** Detects binary interactions between proteins.
+- **Co-Immunoprecipitation (Co-IP):** Isolates protein complexes from cell lysates.
+- **Affinity Purification Mass Spectrometry (AP-MS):** Identifies interacting partners through mass spectrometry.
+- **Fluorescence Resonance Energy Transfer (FRET):** Measures interactions in live cells based on energy transfer between fluorescent tags.
+- **Bioluminescence Resonance Energy Transfer (BRET):** Similar to FRET but uses bioluminescent proteins.
+
+**Bioinformatics Tools for PPIs:**
+- **STRING:** Database of known and predicted protein interactions.
+- **BioGRID:** Repository of genetic and protein interaction data.
+- **IntAct:** Open-source database for molecular interactions.
+- **Cytoscape:** Software for visualizing complex networks of PPIs.
+
+**Applications:**
+- **Drug Target Identification:** PPIs can be targeted to disrupt or enhance specific cellular pathways.
+- **Understanding Disease Mechanisms:** Altered PPIs are implicated in diseases like cancer, Alzheimer's, and autoimmune disorders.
+- **Synthetic Biology:** Designing synthetic protein networks for novel functionalities.
+- **Systems Biology:** Integrating PPIs into models to understand cellular networks and pathways.
+""",
+        "tags": ["protein-protein interactions", "PPIs", "cellular function", "signal transduction"],
+    },
+
+    # Subcategory: Cell Biology
+    {
+        "id": 35,
+        "category": "Biological Sciences",
+        "title": "Cell Structure and Organelles",
+        "content": """
+**Cell Structure:**
+Cells are the basic structural and functional units of life. They come in various shapes and sizes, adapted to their specific functions.
+
+**Key Components:**
+- **Plasma Membrane:** Semipermeable membrane that controls the movement of substances in and out of the cell.
+- **Nucleus:** Contains the cell's genetic material (DNA) and regulates gene expression.
+- **Mitochondria:** Powerhouses of the cell, generating ATP through cellular respiration.
+- **Endoplasmic Reticulum (ER):**
+  - **Rough ER:** Studded with ribosomes; involved in protein synthesis and folding.
+  - **Smooth ER:** Lacks ribosomes; involved in lipid synthesis and detoxification.
+- **Golgi Apparatus:** Modifies, sorts, and packages proteins and lipids for storage or transport.
+- **Lysosomes:** Contain digestive enzymes for breaking down waste materials and cellular debris.
+- **Peroxisomes:** Involved in lipid metabolism and detoxification of hydrogen peroxide.
+- **Cytoskeleton:** Network of protein filaments (microtubules, actin filaments, intermediate filaments) that provide structural support, shape, and facilitate movement.
+- **Ribosomes:** Sites of protein synthesis, can be free in the cytoplasm or attached to the rough ER.
+- **Centrosomes and Centrioles:** Involved in organizing microtubules and cell division.
+
+**Specialized Organelles:**
+- **Chloroplasts:** Found in plant cells; sites of photosynthesis.
+- **Vacuoles:** Storage organelles; large central vacuole in plant cells maintains turgor pressure.
+- **Cilia and Flagella:** Hair-like structures involved in cell movement and sensing the environment.
+
+**Cell Types:**
+- **Prokaryotic Cells:** Lack a nucleus and membrane-bound organelles (e.g., bacteria, archaea).
+- **Eukaryotic Cells:** Have a nucleus and membrane-bound organelles (e.g., plant and animal cells).
+
+**Applications:**
+- **Cell Biology Research:** Understanding cell functions, signaling pathways, and interactions.
+- **Medical Research:** Studying diseases at the cellular level, such as cancer and genetic disorders.
+- **Biotechnology:** Manipulating cell structures for the production of pharmaceuticals, biofuels, and other products.
+- **Genetic Engineering:** Modifying cell components for desired traits or functions.
+""",
+        "tags": ["cell biology", "organelles", "cell structure", "eukaryotic cells"],
+    },
+    {
+        "id": 36,
+        "category": "Biological Sciences",
+        "title": "Cell Signaling Pathways",
+        "content": """
+**Cell Signaling Pathways:**
+Cell signaling pathways are systems of communication that govern basic cellular activities and coordinate cell actions.
+
+**Key Components:**
+- **Signaling Molecules:** Ligands (e.g., hormones, growth factors) that initiate signaling.
+- **Receptors:** Proteins (often on the cell surface) that bind signaling molecules.
+- **Second Messengers:** Small molecules (e.g., cAMP, calcium ions) that relay signals within the cell.
+- **Kinases and Phosphatases:** Enzymes that add or remove phosphate groups, modulating protein activity.
+- **Transcription Factors:** Proteins that regulate gene expression in response to signals.
+
+**Major Signaling Pathways:**
+1. **MAPK/ERK Pathway:**
+   - Involved in cell growth, differentiation, and survival.
+   - Activation sequence: Receptor -> Ras -> Raf -> MEK -> ERK.
+2. **PI3K/Akt Pathway:**
+   - Regulates metabolism, growth, and survival.
+   - Activation sequence: Receptor -> PI3K -> PIP3 -> Akt.
+3. **Wnt Signaling Pathway:**
+   - Controls cell fate, migration, and organogenesis.
+   - Involves stabilization and nuclear translocation of β-catenin.
+4. **Notch Signaling Pathway:**
+   - Mediates cell-cell communication influencing cell differentiation.
+   - Involves cleavage of the Notch receptor and release of the Notch intracellular domain.
+5. **TGF-β Signaling Pathway:**
+   - Regulates cell growth, differentiation, and apoptosis.
+   - Involves Smad proteins translocating to the nucleus.
+
+**Mechanisms of Signal Transduction:**
+- **Autocrine Signaling:** Cells respond to signals they produce themselves.
+- **Paracrine Signaling:** Signals act on nearby cells.
+- **Endocrine Signaling:** Hormones travel through the bloodstream to distant cells.
+- **Juxtacrine Signaling:** Direct contact between cells through membrane-bound signals and receptors.
+
+**Applications:**
+- **Cancer Research:** Dysregulation of signaling pathways can lead to uncontrolled cell growth.
+- **Drug Development:** Targeting specific components of signaling pathways to treat diseases.
+- **Developmental Biology:** Understanding how cells communicate to form tissues and organs.
+- **Neuroscience:** Studying how neurons communicate and form networks.
+""",
+        "tags": ["cell signaling", "signaling pathways", "MAPK/ERK", "PI3K/Akt", "Wnt pathway"],
+    },
+    {
+        "id": 37,
+        "category": "Biological Sciences",
+        "title": "Cell Cycle and Division",
+        "content": """
+**Cell Cycle:**
+The cell cycle is a series of phases that a cell goes through to grow and divide into two daughter cells. It ensures accurate replication and distribution of genetic material.
+
+**Phases of the Cell Cycle:**
+1. **G1 Phase (Gap 1):**
+   - Cell grows in size.
+   - Synthesizes mRNA and proteins required for DNA synthesis.
+2. **S Phase (Synthesis):**
+   - DNA replication occurs, resulting in the duplication of chromosomes.
+3. **G2 Phase (Gap 2):**
+   - Further cell growth and protein synthesis.
+   - Prepares for mitosis.
+4. **M Phase (Mitosis):**
+   - Division of the nucleus (karyokinesis) and cytoplasm (cytokinesis) to form two identical daughter cells.
+
+**Mitosis:**
+Mitosis is the process of nuclear division, ensuring each daughter cell receives an identical set of chromosomes.
+
+**Stages of Mitosis:**
+1. **Prophase:** Chromosomes condense, spindle fibers form, nuclear envelope breaks down.
+2. **Metaphase:** Chromosomes align at the metaphase plate.
+3. **Anaphase:** Sister chromatids separate and move toward opposite poles.
+4. **Telophase:** Chromosomes decondense, nuclear envelopes reform.
+
+**Cytokinesis:**
+The division of the cytoplasm, resulting in two separate daughter cells. In animal cells, a cleavage furrow forms, while plant cells form a cell plate.
+
+**Regulation of the Cell Cycle:**
+- **Cyclins and Cyclin-Dependent Kinases (CDKs):** Proteins that regulate progression through the cell cycle.
+- **Checkpoints:** Control mechanisms that ensure each phase is completed accurately before moving to the next (e.g., G1/S checkpoint, G2/M checkpoint, spindle assembly checkpoint).
+- **Tumor Suppressors and Oncogenes:** Genes that regulate cell cycle progression and can lead to cancer when mutated.
+
+**Applications:**
+- **Cancer Research:** Understanding cell cycle dysregulation to develop targeted therapies.
+- **Developmental Biology:** Studying how cell division contributes to organism growth and tissue formation.
+- **Genetic Engineering:** Manipulating cell division for cloning and genetic modification.
+- **Biomedical Research:** Investigating diseases related to cell cycle abnormalities.
+""",
+        "tags": ["cell cycle", "mitosis", "cell division", "cell biology", "cell cycle regulation"],
+    },
+
+    # Subcategory: Evolution
+    {
+        "id": 38,
+        "category": "Biological Sciences",
+        "title": "Natural Selection and Genetic Drift",
+        "content": """
+**Natural Selection:**
+Natural selection is the process by which heritable traits that confer a survival or reproductive advantage become more common in successive generations of a population.
+
+**Key Components:**
+- **Variation:** Differences in traits among individuals.
+- **Inheritance:** Traits are passed from parents to offspring.
+- **Differential Survival and Reproduction:** Individuals with advantageous traits are more likely to survive and reproduce.
+- **Adaptation:** The accumulation of favorable traits in a population over time.
+
+**Types of Natural Selection:**
+1. **Directional Selection:** Favors one extreme phenotype, causing allele frequencies to shift in one direction.
+2. **Stabilizing Selection:** Favors intermediate phenotypes, reducing variation.
+3. **Disruptive Selection:** Favors both extreme phenotypes, increasing variation.
+
+**Genetic Drift:**
+Genetic drift refers to random changes in allele frequencies in a population, which can lead to significant genetic differences over time, especially in small populations.
+
+**Types of Genetic Drift:**
+1. **Bottleneck Effect:** A significant reduction in population size due to an event (e.g., natural disaster) leading to a loss of genetic diversity.
+2. **Founder Effect:** When a new population is established by a small number of individuals, resulting in limited genetic variation.
+
+**Differences Between Natural Selection and Genetic Drift:**
+- **Deterministic vs. Random:** Natural selection is a non-random process driven by environmental pressures, while genetic drift is random.
+- **Impact on Allele Frequencies:** Natural selection consistently increases the frequency of beneficial alleles, whereas genetic drift can increase or decrease allele frequencies unpredictably.
+- **Population Size Influence:** Genetic drift has a more pronounced effect in small populations, whereas natural selection can act in both small and large populations.
+
+**Applications:**
+- **Understanding Evolutionary Dynamics:** Explaining how populations evolve over time.
+- **Conservation Biology:** Managing genetic diversity in endangered species to prevent loss due to genetic drift.
+- **Population Genetics Studies:** Investigating the genetic structure of populations and the forces shaping it.
+- **Medical Genetics:** Studying the prevalence of genetic diseases within populations influenced by drift or selection.
+""",
+        "tags": ["natural selection", "genetic drift", "evolutionary biology", "population genetics"],
+    },
+    {
+        "id": 39,
+        "category": "Biological Sciences",
+        "title": "Molecular Evolution",
+        "content": """
+**Molecular Evolution:**
+Molecular evolution focuses on the processes of genetic change at the molecular level, including DNA, RNA, and protein sequences, across time.
+
+**Key Concepts:**
+- **Substitution Rate:** The rate at which one nucleotide or amino acid replaces another in a sequence over time.
+- **Molecular Clock:** The hypothesis that genetic mutations accumulate at a relatively constant rate, allowing estimation of divergence times between species.
+- **Positive Selection:** Selection that favors advantageous mutations, leading to rapid changes in protein sequences.
+- **Purifying Selection:** Selection that removes deleterious mutations, maintaining the integrity of essential proteins.
+- **Neutral Theory:** The proposition that most evolutionary changes are the result of genetic drift of neutral mutations.
+
+**Mechanisms of Molecular Evolution:**
+1. **Point Mutations:** Single nucleotide changes that can lead to synonymous or non-synonymous substitutions.
+2. **Insertion and Deletion (Indels):** Addition or removal of nucleotides, potentially causing frameshifts in protein coding.
+3. **Gene Duplication:** Creation of extra gene copies, allowing for divergence and specialization.
+4. **Recombination:** Exchange of genetic material between different DNA molecules, increasing genetic diversity.
+
+**Methods for Studying Molecular Evolution:**
+- **Phylogenetic Analysis:** Constructing evolutionary trees based on molecular data.
+- **Comparative Genomics:** Comparing genomes to identify evolutionary patterns and conserved elements.
+- **Population Genetics Models:** Studying allele frequency changes over time within populations.
+- **Molecular Dating:** Estimating the timing of evolutionary events using molecular clocks.
+
+**Applications:**
+- **Tracing Ancestral Relationships:** Understanding the evolutionary history of species and genes.
+- **Identifying Adaptations:** Detecting molecular changes associated with specific adaptations.
+- **Disease Evolution:** Studying the evolution of pathogens and resistance mechanisms.
+- **Biotechnology:** Utilizing evolutionary principles to engineer proteins with desired properties.
+""",
+        "tags": ["molecular evolution", "phylogenetics", "molecular clock", "genetic mutations"],
+    },
+    {
+        "id": 40,
+        "category": "Biological Sciences",
+        "title": "Phylogenetics",
+        "content": """
+**Phylogenetics:**
+Phylogenetics is the study of evolutionary relationships among biological entities, often species, individuals, or genes. It involves the construction and analysis of phylogenetic trees to depict these relationships.
+
+**Key Concepts:**
+- **Phylogenetic Tree:** A branching diagram showing the inferred evolutionary relationships.
+- **Cladistics:** Classification based on common ancestry and branching points.
+- **Monophyletic Group:** A group containing an ancestor and all its descendants.
+- **Paraphyletic Group:** A group containing an ancestor and some, but not all, descendants.
+- **Polyphyletic Group:** A group derived from multiple ancestral sources, not including their common ancestor.
+
+**Tree Construction Methods:**
+1. **Distance-Based Methods:**
+   - **Neighbor-Joining:** Constructs trees based on genetic distance between taxa.
+   - **UPGMA (Unweighted Pair Group Method with Arithmetic Mean):** Assumes a constant rate of evolution (molecular clock).
+
+2. **Character-Based Methods:**
+   - **Maximum Parsimony:** Selects the tree with the least number of evolutionary changes.
+   - **Maximum Likelihood:** Evaluates the probability of the data given a particular tree and evolutionary model.
+   - **Bayesian Inference:** Uses probability distributions to estimate the likelihood of trees.
+
+3. **Molecular Clock Models:**
+   - **Strict Clock:** Assumes a constant rate of molecular evolution across all branches.
+   - **Relaxed Clock:** Allows variation in the rate of molecular evolution across branches.
+
+**Applications:**
+- **Taxonomy and Systematics:** Classifying organisms based on evolutionary relationships.
+- **Biogeography:** Studying the geographical distribution of species in relation to their phylogeny.
+- **Functional Genomics:** Linking gene evolution to functional diversification.
+- **Epidemiology:** Tracing the spread and evolution of pathogens.
+- **Conservation Biology:** Understanding genetic diversity and evolutionary history for species conservation.
+""",
+        "tags": ["phylogenetics", "phylogenetic tree", "evolutionary relationships", "cladistics"],
+    },
+
+    # Subcategory: Biochemistry
+    {
+        "id": 41,
+        "category": "Biological Sciences",
+        "title": "Enzyme Kinetics",
+        "content": """
+**Enzyme Kinetics:**
+Enzyme kinetics studies the rates of chemical reactions catalyzed by enzymes, providing insights into enzyme efficiency, mechanism, and regulation.
+
+**Key Concepts:**
+- **Reaction Rate:** The speed at which a reaction proceeds, typically measured as the formation of product over time.
+- **Michaelis-Menten Kinetics:** Describes the rate of enzymatic reactions by relating reaction rate to substrate concentration.
+  
+  \[
+  V = \frac{{V_{max} [S]}}{{K_m + [S]}}
+  \]
+  
+  - **V:** Reaction rate
+  - **V_max:** Maximum reaction rate
+  - **[S]:** Substrate concentration
+  - **K_m:** Michaelis constant (substrate concentration at half V_max)
+
+- **Turnover Number (k_cat):** The number of substrate molecules converted to product per enzyme molecule per unit time.
+  
+  \[
+  k_{cat} = \frac{{V_{max}}}{{[E]_{total}}}
+  \]
+  
+  - **[E]_total:** Total enzyme concentration
+
+**Enzyme Inhibition:**
+Enzyme activity can be modulated by inhibitors, which decrease the reaction rate.
+
+- **Competitive Inhibition:** Inhibitors compete with substrate for the active site, increasing K_m without affecting V_max.
+- **Non-Competitive Inhibition:** Inhibitors bind to an allosteric site, decreasing V_max without affecting K_m.
+- **Uncompetitive Inhibition:** Inhibitors bind only to the enzyme-substrate complex, decreasing both K_m and V_max.
+
+**Regulation of Enzyme Activity:**
+Enzymes can be regulated through various mechanisms to maintain cellular homeostasis.
+
+- **Allosteric Regulation:** Binding of molecules to sites other than the active site, causing conformational changes that affect activity.
+- **Covalent Modification:** Addition or removal of functional groups (e.g., phosphorylation) to alter enzyme activity.
+- **Feedback Inhibition:** End products of metabolic pathways inhibit upstream enzymes to prevent overproduction.
+
+**Applications:**
+- **Drug Development:** Designing inhibitors to modulate enzyme activity in diseases.
+- **Metabolic Engineering:** Optimizing enzyme pathways for industrial biotechnology.
+- **Diagnostics:** Measuring enzyme activity levels as biomarkers for diseases.
+- **Research:** Understanding enzyme mechanisms and their roles in cellular processes.
+""",
+        "tags": ["enzyme kinetics", "Michaelis-Menten", "enzyme inhibition", "metabolic regulation"],
+    },
+    {
+        "id": 42,
+        "category": "Biological Sciences",
+        "title": "Metabolism",
+        "content": """
+**Metabolism:**
+Metabolism encompasses all chemical reactions that occur within living organisms to maintain life. These reactions are categorized into two main types: catabolism and anabolism.
+
+**Key Concepts:**
+- **Catabolism:** Breakdown of complex molecules into simpler ones, releasing energy.
+  - **Examples:** Glycolysis (breakdown of glucose), β-oxidation (breakdown of fatty acids).
+- **Anabolism:** Synthesis of complex molecules from simpler ones, requiring energy.
+  - **Examples:** Protein synthesis, DNA replication, lipid synthesis.
+
+**Energy Carriers:**
+- **ATP (Adenosine Triphosphate):** Primary energy currency of the cell, used to drive metabolic processes.
+- **NADH/NAD+ and FADH2/FAD:** Electron carriers involved in redox reactions and energy production.
+
+**Metabolic Pathways:**
+- **Glycolysis:** Series of reactions converting glucose to pyruvate, generating ATP and NADH.
+- **Citric Acid Cycle (Krebs Cycle):** Oxidizes acetyl-CoA to CO2, producing NADH, FADH2, and ATP.
+- **Oxidative Phosphorylation:** Electron transport chain generates a proton gradient to produce ATP via ATP synthase.
+- **Photosynthesis:** In plants, converting light energy into chemical energy stored in glucose.
+- **Pentose Phosphate Pathway:** Generates NADPH and ribose-5-phosphate for biosynthetic reactions.
+
+**Regulation of Metabolism:**
+- **Allosteric Regulation:** Enzyme activity modulated by molecules binding to allosteric sites.
+- **Covalent Modification:** Enzymes are activated or inhibited through phosphorylation, acetylation, etc.
+- **Hormonal Control:** Hormones like insulin and glucagon regulate metabolic pathways based on energy needs.
+
+**Applications:**
+- **Medical Research:** Understanding metabolic disorders like diabetes and metabolic syndrome.
+- **Biotechnology:** Engineering metabolic pathways for the production of biofuels, pharmaceuticals, and other chemicals.
+- **Nutritional Science:** Studying how diet influences metabolic processes and overall health.
+- **Environmental Science:** Utilizing metabolic pathways for bioremediation and waste treatment.
+""",
+        "tags": ["metabolism", "catabolism", "anabolism", "metabolic pathways", "energy production"],
+    },
+    {
+        "id": 43,
+        "category": "Biological Sciences",
+        "title": "Biochemical Pathways",
+        "content": """
+**Biochemical Pathways:**
+Biochemical pathways are interconnected series of chemical reactions occurring within a cell, catalyzed by enzymes, to sustain life by facilitating growth, energy production, and response to environmental changes.
+
+**Key Pathways:**
+1. **Glycolysis:**
+   - **Function:** Breaks down glucose into pyruvate, generating ATP and NADH.
+   - **Location:** Cytoplasm.
+   - **Significance:** Provides energy and metabolic intermediates.
+
+2. **Citric Acid Cycle (Krebs Cycle):**
+   - **Function:** Oxidizes acetyl-CoA to CO2, producing NADH, FADH2, and ATP.
+   - **Location:** Mitochondrial matrix.
+   - **Significance:** Central hub for metabolism, connecting carbohydrate, fat, and protein metabolism.
+
+3. **Oxidative Phosphorylation:**
+   - **Function:** Uses electrons from NADH and FADH2 to generate a proton gradient, driving ATP synthesis.
+   - **Location:** Inner mitochondrial membrane.
+   - **Significance:** Produces the majority of ATP in aerobic organisms.
+
+4. **Photosynthesis:**
+   - **Function:** Converts light energy into chemical energy stored in glucose.
+   - **Location:** Chloroplasts (in plants and algae).
+   - **Significance:** Foundation of the food chain, producing oxygen as a byproduct.
+
+5. **Pentose Phosphate Pathway:**
+   - **Function:** Generates NADPH and ribose-5-phosphate for biosynthetic reactions.
+   - **Location:** Cytoplasm.
+   - **Significance:** Provides reducing power and ribose for nucleotide synthesis.
+
+6. **Fatty Acid Synthesis and β-Oxidation:**
+   - **Function:** Synthesis of fatty acids from acetyl-CoA and breakdown of fatty acids to acetyl-CoA.
+   - **Location:** Cytoplasm (synthesis) and mitochondria (β-oxidation).
+   - **Significance:** Essential for lipid metabolism and energy storage.
+
+7. **Amino Acid Metabolism:**
+   - **Function:** Synthesis and degradation of amino acids.
+   - **Location:** Cytoplasm and mitochondria.
+   - **Significance:** Provides nitrogen for nucleic acid synthesis and intermediates for other pathways.
+
+**Regulation of Biochemical Pathways:**
+- **Enzyme Activity:** Controlled through allosteric regulation, covalent modifications, and enzyme synthesis/degradation.
+- **Substrate Availability:** Levels of substrates can influence the rate of pathway reactions.
+- **Feedback Inhibition:** End products inhibit upstream enzymes to
+
