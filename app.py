@@ -1,5 +1,3 @@
-# app.py
-
 import streamlit as st
 from data import research_summaries
 from collections import defaultdict
@@ -88,9 +86,10 @@ def filter_summaries(summaries, category, query):
         query = query.lower()
         filtered = [
             s for s in filtered
-            if query in s['title'].lower()
-            or query in s['content'].lower()
-            or any(query in tag.lower() for tag in s['tags'])
+            if query in s['title'].lower()  # Title match
+            or query in s['content'].lower()  # Content match
+            or any(query in tag.lower() for tag in s['tags'])  # Tag match
+            or query in s['category'].lower()  # Category match
         ]
     return filtered
 
