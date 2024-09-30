@@ -69,7 +69,7 @@ st.title("📚 Bioinformatics Learning App")
 # Search Functionality
 # -------------------------
 search_query = st.text_input(
-    "🔍 Search Topics",
+    "🔍 Word Search",
     value="",
     placeholder="Enter keywords to search...",
     help="Search within titles, summaries, tags, and categories."
@@ -101,15 +101,6 @@ filtered_summaries = filter_summaries(research_summaries, st.session_state.selec
 if not filtered_summaries:
     st.warning(f"No results found for '{search_query}' in category '{selected_category}'.")
     st.stop()
-
-# -------------------------
-# Display Matching Summaries
-# -------------------------
-st.subheader("Matching Topics")
-for idx, summary in enumerate(filtered_summaries):
-    if st.button(f"{summary['title']} (ID: {summary['id']})", key=f"select_{summary['id']}"):
-        st.session_state.current_index = idx  # Set the current index to the selected summary
-        st.experimental_rerun()  # Rerun the app to display the selected summary
 
 # -------------------------
 # Pagination: Current Summary
