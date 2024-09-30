@@ -1,20 +1,15 @@
-# app.py
-
 import streamlit as st
 from data import research_summaries
 
 # Initialize session state variables
-if 'current_index' not in st.session_state:
-    st.session_state.current_index = 0
-
-if 'liked' not in st.session_state:
-    st.session_state.liked = False
-
-if 'query' not in st.session_state:
-    st.session_state.query = ''
-
-if 'filtered_summaries' not in st.session_state:
-    st.session_state.filtered_summaries = research_summaries
+for key, value in {
+    'current_index': 0,
+    'liked': False,
+    'query': '',
+    'filtered_summaries': research_summaries,
+}.items():
+    if key not in st.session_state:
+        st.session_state[key] = value
 
 # Search bar
 st.title("📚 Research Reels")
@@ -23,7 +18,6 @@ query_input = st.text_input("Search topics...", value=st.session_state.query)
 # Update the search query
 if query_input != st.session_state.query:
     st.session_state.query = query_input
-    # Filter the summaries based on the query
     st.session_state.filtered_summaries = [
         summary for summary in research_summaries
         if any(query_input.lower() in tag.lower() for tag in summary['tags'])
@@ -56,8 +50,10 @@ else:
 
     with col2:
         comment = st.text_input("Add a comment...", key=f'comment_{current_summary["id"]}')
-        if st.button("Submit Comment", key=f'submit_comment_{current_summary["id"]}'):
+        if st.button("Submit Comment", key=f'submit_comment_{current_summary["id"]}') and comment:
             st.write(f"Comment submitted: {comment}")
+        elif st.button("Submit Comment", key=f'submit_comment_{current_summary["id"]}'):
+            st.write("Comment cannot be empty")
 
     with col3:
         if st.button('🔗 Share', key=f'share_{current_summary["id"]}'):
@@ -67,16 +63,14 @@ else:
     nav1, nav2 = st.columns([1, 1])
 
     with nav1:
-        if st.button('⬅️ Previous', key='prev'):
-            if st.session_state.current_index > 0:
-                st.session_state.current_index -= 1
-                st.session_state.liked = False  # Reset liked status
+        if st.button('⬅️ Previous', key='prev') and st.session_state.current_index > 0:
+            st.session_state.current_index -= 1
+            st.session_state.liked = False  # Reset liked status
 
     with nav2:
-        if st.button('Next ➡️', key='next'):
-            if st.session_state.current_index < len(st.session_state.filtered_summaries) - 1:
-                st.session_state.current_index += 1
-                st.session_state.liked = False  # Reset liked status
+        if st.button('Next ➡️', key='next') and st.session_state.current_index < len(st.session_state.filtered_summaries) - 1:
+            st.session_state.current_index += 1
+            st.session_state.liked = False  # Reset liked status
 
     # Pagination Indicator
     st.write(f"Summary {st.session_state.current_index + 1} of {len(st.session_state.filtered_summaries)}")
