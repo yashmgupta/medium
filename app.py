@@ -3,7 +3,6 @@
 import streamlit as st
 from data import research_summaries
 from collections import defaultdict
-import plotly.express as px
 
 # -------------------------
 # Set Page Configuration
@@ -117,20 +116,6 @@ with st.container():
     st.markdown(current_summary['content'])
     st.markdown(f"**Category:** {current_summary['category']}")
     st.markdown(f"**Tags:** {', '.join(current_summary['tags'])}")
-
-    # Optional: Add a Plotly chart related to the topic
-    # For demonstration, let's create a dummy pie chart of tags
-    tag_counts = {}
-    for tag in current_summary['tags']:
-        tag_counts[tag] = tag_counts.get(tag, 0) + 1
-
-    fig = px.pie(
-        names=list(tag_counts.keys()),
-        values=list(tag_counts.values()),
-        title="Tag Distribution",
-        hole=0.3
-    )
-    st.plotly_chart(fig, use_container_width=True)
 
     # -------------------------
     # Action Buttons
