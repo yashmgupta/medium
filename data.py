@@ -1563,7 +1563,7 @@ Phylogenetics is the study of evolutionary relationships among biological entiti
     },
 ]
 
-# -------------------------
+    # -------------------------
     # Category: Bioinformatics
     # -------------------------
     # DNA Analysis and Sequencing
