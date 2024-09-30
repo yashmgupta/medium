@@ -1561,8 +1561,6 @@ Phylogenetics is the study of evolutionary relationships among biological entiti
 """,
         "tags": ["Phylogenetics", "Phylogenetic Tree", "Evolutionary Relationships", "Cladistics"],
     },
-]
-
     # -------------------------
     # Category: Bioinformatics
     # -------------------------
