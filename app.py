@@ -24,7 +24,7 @@ def local_css(file_name):
     except FileNotFoundError:
         st.warning("CSS file not found. Skipping custom styling.")
 
-# Uncomment if you have a CSS file
+# Uncomment the following line if you have a CSS file
 # local_css("assets/styles.css")
 
 # -------------------------
